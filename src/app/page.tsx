@@ -9,7 +9,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { Badge } from "@/components/ui/badge";
-import { Check, Rocket, Zap, ShieldCheck, Star, ArrowRight } from "lucide-react";
+import { Check, Rocket, Zap, ShieldCheck, Star, ArrowRight, Mail } from "lucide-react";
 
 export default function Home() {
   return (
@@ -79,7 +79,7 @@ export default function Home() {
             <div className="text-center mb-16">
               <h2 className="text-3xl md:text-5xl font-extrabold mb-6">El Proceso de Éxito</h2>
               <p className="text-muted-foreground max-w-xl mx-auto">
-                Diseñado para llevarte de la idea a la facturación en un tiempo récord de 7 a 14 días.
+                Desarrollo estratégico con tiempos de entrega adaptados a la complejidad de tu proyecto.
               </p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -105,7 +105,7 @@ export default function Home() {
           <div className="container mx-auto px-6">
             <div className="text-center mb-16">
               <h2 className="text-3xl md:text-5xl font-extrabold mb-6">Planes de Inversión</h2>
-              <p className="text-muted-foreground">Precios transparentes. Resultados garantizados.</p>
+              <p className="text-muted-foreground">Precios competitivos. Resultados garantizados.</p>
             </div>
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-5xl mx-auto">
               {content.pricing.map((plan, i) => (
@@ -195,12 +195,18 @@ export default function Home() {
                 {content.footer.copy}
               </p>
             </div>
-            <div className="flex gap-6">
-              {content.footer.links.map((link, i) => (
-                <a key={i} href="#" className="text-sm text-muted-foreground hover:text-primary transition-colors font-bold uppercase tracking-widest">
-                  {link}
-                </a>
-              ))}
+            <div className="flex flex-col md:flex-row items-center gap-6">
+              <a href={`mailto:${content.footer.email}`} className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors font-bold uppercase tracking-widest">
+                <Mail className="w-4 h-4" />
+                {content.footer.email}
+              </a>
+              <div className="flex gap-6">
+                {content.footer.links.map((link, i) => (
+                  <a key={i} href="#" className="text-sm text-muted-foreground hover:text-primary transition-colors font-bold uppercase tracking-widest">
+                    {link}
+                  </a>
+                ))}
+              </div>
             </div>
           </div>
         </div>

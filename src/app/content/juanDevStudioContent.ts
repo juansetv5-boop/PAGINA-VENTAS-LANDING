@@ -2,7 +2,7 @@
 export const juanDevStudioContent = {
   hero: {
     title: "Páginas web rápidas y estratégicas que convierten",
-    subtitle: "Diseño y desarrollo de alta gama para negocios que no se conforman con lo ordinario. Entregas en 7-14 días con enfoque total en ROI.",
+    subtitle: "Diseño y desarrollo de alta gama para negocios que no se conforman con lo ordinario. Tiempos de entrega adaptados a la complejidad de tu proyecto con enfoque total en ROI.",
     cta: "Impulsa mi negocio ahora",
     secondaryCta: "Ver proceso"
   },
@@ -45,27 +45,27 @@ export const juanDevStudioContent = {
   ],
   pricing: [
     {
-      name: "Web Base",
-      price: "$1,499",
-      description: "Ideal para marcas que necesitan una presencia digital sólida e impactante.",
+      name: "Web Base (Sin Backend)",
+      price: "$600.000 COP",
+      description: "Ideal para marcas que necesitan una presencia digital sólida e impactante sin gestión de datos compleja.",
       features: [
         "Diseño Premium Personalizado",
         "Optimización SEO básica",
         "Responsive (Mobile-First)",
-        "Entrega en 7-10 días",
+        "Tiempo según complejidad",
         "Soporte por 30 días"
       ],
       recommended: false
     },
     {
-      name: "Web Sales Engine Pro",
-      price: "$2,999",
-      description: "Máquina de ventas completa diseñada para escalar tu facturación.",
+      name: "Web Pro (Con Backend)",
+      price: "$950.000 COP",
+      description: "Máquina de ventas completa con funcionalidades dinámicas y base de datos.",
       features: [
         "Estrategia de Conversión Avanzada",
-        "Copywriting Persuasivo",
-        "Integración de CRM / Email Marketing",
-        "Optimización de Carga <1s",
+        "Backend & Gestión de Datos",
+        "Integración de CRM / Formularios",
+        "Tiempo según complejidad",
         "Soporte VIP Prioritario"
       ],
       recommended: true
@@ -77,8 +77,8 @@ export const juanDevStudioContent = {
       answer: "No vendemos simples páginas web; entregamos activos digitales diseñados para generar ROI. La calidad del código, la estrategia de conversión y el diseño premium aseguran que tu inversión se recupere rápidamente."
     },
     {
-      question: "¿Realmente entregan en 14 días?",
-      answer: "Sí. Nuestro stack tecnológico y proceso estandarizado nos permiten eliminar la burocracia y enfocarnos en lo que importa: lanzar tu web al mercado lo antes posible sin sacrificar calidad."
+      question: "¿Cuánto tiempo tarda la entrega?",
+      answer: "El tiempo de entrega depende directamente de la complejidad de la página. Nos enfocamos en eliminar la burocracia para lanzar tu proyecto lo antes posible manteniendo los más altos estándares de calidad."
     },
     {
       question: "¿Qué tecnologías utilizan?",
@@ -91,6 +91,7 @@ export const juanDevStudioContent = {
   },
   footer: {
     copy: "© 2024 Juan Dev Studio. Todos los derechos reservados.",
-    links: ["Instagram", "LinkedIn", "X (Twitter)"]
+    email: "jslunaadrada@gmail.com",
+    links: ["Instagram"]
   }
 };
