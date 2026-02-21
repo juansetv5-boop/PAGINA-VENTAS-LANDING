@@ -29,6 +29,7 @@ const BookingSection = () => {
                             hideLandingPageDetails: false,
                             primaryColor: "f2b90d",
                             textColor: "ffffff",
+                            locale: "es",
                         }}
                     />
                 </div>

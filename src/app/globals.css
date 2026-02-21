@@ -68,19 +68,28 @@ html {
 .gold-text-gradient {
   background: linear-gradient(to bottom,
       #f2b90d 0%,
-      #ffffff 20%,
-      #f2b90d 40%,
-      #997300 70%,
-      #f2b90d 100%);
+      #e0a800 30%,
+      #f2b90d 60%,
+      #997300 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
 .gold-neon-glow {
-  box-shadow: 0 0 15px rgba(242, 185, 13, 0.4),
+  box-shadow: 0 0 25px rgba(242, 185, 13, 0.6),
+    inset 0 0 15px rgba(242, 185, 13, 0.3);
+  border: 1px solid rgba(242, 185, 13, 0.9) !important;
+}
+
+.gold-border-soft-glow {
+  box-shadow: 0 0 15px rgba(242, 185, 13, 0.35),
     inset 0 0 10px rgba(242, 185, 13, 0.2);
-  border: 1px solid rgba(242, 185, 13, 0.8) !important;
+  border: 1px solid rgba(242, 185, 13, 0.5) !important;
+}
+
+.gold-header-glow {
+  text-shadow: 0 0 25px rgba(242, 185, 13, 0.75);
 }
 
 @keyframes breathing-glow {

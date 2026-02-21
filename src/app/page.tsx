@@ -88,7 +88,7 @@ export default function Home() {
         <section id="proceso" className="py-24 bg-background">
           <div className="container mx-auto px-6">
             <div className="text-center mb-16">
-              <h2 className="text-3xl md:text-5xl font-extrabold mb-6">El Proceso de Éxito</h2>
+              <h2 className="text-3xl md:text-5xl font-extrabold mb-4">El Proceso de Éxito</h2>
               <p className="text-muted-foreground max-w-xl mx-auto">
                 Desarrollo estratégico con tiempos de entrega adaptados a la complejidad de tu proyecto.
               </p>
@@ -115,7 +115,7 @@ export default function Home() {
         <section className="py-24 bg-white/[0.02]">
           <div className="container mx-auto px-6">
             <div className="text-center mb-16">
-              <h2 className="text-3xl md:text-5xl font-extrabold mb-6">Planes de Inversión</h2>
+              <h2 className="text-3xl md:text-5xl font-extrabold mb-4">Planes de Inversión</h2>
               <p className="text-muted-foreground">Precios competitivos. Resultados garantizados.</p>
             </div>
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-5xl mx-auto">
@@ -123,8 +123,8 @@ export default function Home() {
                 const wppMsg = plan.whatsappMessage;
                 return (
                   <div key={i} className={`relative p-8 rounded-2xl border transition-all duration-300 flex flex-col h-full ${plan.recommended
-                      ? 'bg-white/[0.05] border-primary/50 gold-neon-glow animate-breathing-glow scale-105 z-10'
-                      : 'bg-white/[0.02] border-white/10 hover:border-white/20'
+                    ? 'bg-white/[0.05] border-primary/50 gold-border-soft-glow gold-neon-glow animate-breathing-glow scale-105 z-10'
+                    : 'bg-white/[0.02] border-primary/30 hover:border-primary/50'
                     }`}>
                     {plan.recommended && (
                       <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-primary text-primary-foreground text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">
@@ -162,7 +162,7 @@ export default function Home() {
         {/* FAQ Section */}
         <section className="py-24">
           <div className="container mx-auto px-6 max-w-3xl">
-            <h2 className="text-3xl md:text-5xl font-extrabold text-center mb-16">Preguntas Frecuentes</h2>
+            <h2 className="text-3xl md:text-5xl font-extrabold mb-12 text-center">Preguntas Frecuentes</h2>
             <Accordion type="single" collapsible className="w-full space-y-4">
               {content.faq.map((item, i) => (
                 <AccordionItem key={i} value={`item-${i}`} className="border border-white/5 bg-white/[0.03] rounded-lg px-6">
