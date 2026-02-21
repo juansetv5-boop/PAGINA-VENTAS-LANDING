@@ -1,5 +1,14 @@
 
 export const juanDevStudioContent = {
+  contact: {
+    phone: "573127930898",
+    messages: {
+      navbar: "Hola Juan, me gustaría agendar una llamada para conocer más sobre tus servicios de desarrollo web.",
+      hero: "¡Hola Juan! Estoy listo para impulsar mi negocio ahora. Me interesa una web de alto impacto y alto ROI.",
+      pricingBase: "Hola Juan, me interesa el plan Web Base de $600.000 COP. ¿Cómo podemos empezar?",
+      pricingPro: "¡Hola Juan! Quiero la Web Pro de $950.000 COP ahora mismo para llevar mi negocio al siguiente nivel con backend y gestión de datos."
+    }
+  },
   hero: {
     title: "Páginas web rápidas y estratégicas que convierten",
     subtitle: "Diseño y desarrollo de alta gama para negocios que no se conforman con lo ordinario. Tiempos de entrega adaptados a la complejidad de tu proyecto con enfoque total en ROI.",
@@ -55,7 +64,8 @@ export const juanDevStudioContent = {
         "Tiempo según complejidad",
         "Soporte por 30 días"
       ],
-      recommended: false
+      recommended: false,
+      cta: "Comenzar Proyecto Base"
     },
     {
       name: "Web Pro (Con Backend)",
@@ -68,7 +78,8 @@ export const juanDevStudioContent = {
         "Tiempo según complejidad",
         "Soporte VIP Prioritario"
       ],
-      recommended: true
+      recommended: true,
+      cta: "¡Quiero la Web Pro Ahora!"
     }
   ],
   faq: [

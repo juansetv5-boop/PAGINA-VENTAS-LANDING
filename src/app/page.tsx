@@ -12,6 +12,10 @@ import { Badge } from "@/components/ui/badge";
 import { Check, Rocket, Zap, ShieldCheck, Star, ArrowRight, Mail } from "lucide-react";
 
 export default function Home() {
+  const getWppLink = (message: string) => {
+    return `https://wa.me/${content.contact.phone}?text=${encodeURIComponent(message)}`;
+  };
+
   return (
     <div className="flex flex-col min-h-screen">
       {/* Navbar sutil */}
@@ -20,8 +24,10 @@ export default function Home() {
           <span className="font-headline font-extrabold text-xl tracking-tighter">
             JUAN<span className="text-primary">DEV</span> STUDIO
           </span>
-          <Button variant="outline" className="hidden md:flex border-primary/20 hover:border-primary">
-            Agendar Llamada
+          <Button asChild variant="outline" className="hidden md:flex border-primary/20 hover:border-primary">
+            <a href={getWppLink(content.contact.messages.navbar)} target="_blank" rel="noopener noreferrer">
+              Agendar Llamada
+            </a>
           </Button>
         </div>
       </header>
@@ -41,9 +47,11 @@ export default function Home() {
               {content.hero.subtitle}
             </p>
             <div className="flex flex-col md:flex-row items-center justify-center gap-4">
-              <Button size="lg" className="h-14 px-8 text-lg font-bold gold-glow group">
-                {content.hero.cta}
-                <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+              <Button asChild size="lg" className="h-14 px-8 text-lg font-bold gold-glow group">
+                <a href={getWppLink(content.contact.messages.hero)} target="_blank" rel="noopener noreferrer">
+                  {content.hero.cta}
+                  <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+                </a>
               </Button>
               <Button size="lg" variant="ghost" className="h-14 px-8 text-lg">
                 {content.hero.secondaryCta}
@@ -108,34 +116,39 @@ export default function Home() {
               <p className="text-muted-foreground">Precios competitivos. Resultados garantizados.</p>
             </div>
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-5xl mx-auto">
-              {content.pricing.map((plan, i) => (
-                <Card key={i} className={`relative flex flex-col p-8 ${plan.recommended ? 'gold-border-gradient scale-105 z-10' : 'bg-background/40 border-white/10'}`}>
-                  {plan.recommended && (
-                    <Badge className="absolute -top-3 left-1/2 -translate-x-1/2 bg-primary text-background font-bold px-4 py-1">
-                      MÁS POPULAR
-                    </Badge>
-                  )}
-                  <div className="mb-8">
-                    <h3 className="text-2xl font-bold mb-2">{plan.name}</h3>
-                    <p className="text-sm text-muted-foreground mb-6">{plan.description}</p>
-                    <div className="flex items-baseline gap-1">
-                      <span className="text-4xl font-black">{plan.price}</span>
-                      <span className="text-muted-foreground">/proyecto</span>
-                    </div>
-                  </div>
-                  <div className="flex-grow space-y-4 mb-8">
-                    {plan.features.map((feature, idx) => (
-                      <div key={idx} className="flex items-start gap-3">
-                        <Check className="h-5 w-5 text-primary shrink-0" />
-                        <span className="text-sm">{feature}</span>
+              {content.pricing.map((plan, i) => {
+                const wppMsg = plan.recommended ? content.contact.messages.pricingPro : content.contact.messages.pricingBase;
+                return (
+                  <Card key={i} className={`relative flex flex-col p-8 ${plan.recommended ? 'gold-border-gradient scale-105 z-10' : 'bg-background/40 border-white/10'}`}>
+                    {plan.recommended && (
+                      <Badge className="absolute -top-3 left-1/2 -translate-x-1/2 bg-primary text-background font-bold px-4 py-1">
+                        MÁS POPULAR
+                      </Badge>
+                    )}
+                    <div className="mb-8">
+                      <h3 className="text-2xl font-bold mb-2">{plan.name}</h3>
+                      <p className="text-sm text-muted-foreground mb-6">{plan.description}</p>
+                      <div className="flex items-baseline gap-1">
+                        <span className="text-4xl font-black">{plan.price}</span>
+                        <span className="text-muted-foreground">/proyecto</span>
                       </div>
-                    ))}
-                  </div>
-                  <Button className={`w-full h-12 text-lg font-bold ${plan.recommended ? 'gold-glow' : 'variant-secondary'}`}>
-                    Elegir Plan
-                  </Button>
-                </Card>
-              ))}
+                    </div>
+                    <div className="flex-grow space-y-4 mb-8">
+                      {plan.features.map((feature, idx) => (
+                        <div key={idx} className="flex items-start gap-3">
+                          <Check className="h-5 w-5 text-primary shrink-0" />
+                          <span className="text-sm">{feature}</span>
+                        </div>
+                      ))}
+                    </div>
+                    <Button asChild className={`w-full h-12 text-lg font-bold ${plan.recommended ? 'gold-glow' : 'variant-secondary'}`}>
+                      <a href={getWppLink(wppMsg)} target="_blank" rel="noopener noreferrer">
+                        {plan.cta}
+                      </a>
+                    </Button>
+                  </Card>
+                );
+              })}
             </div>
           </div>
         </section>
