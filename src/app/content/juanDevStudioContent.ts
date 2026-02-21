@@ -4,13 +4,11 @@ export const juanDevStudioContent = {
     phone: "573127930898",
     messages: {
       navbar: "Hola Juan, me gustaría agendar una llamada para conocer más sobre tus servicios de desarrollo web.",
-      hero: "¡Hola Juan! Estoy listo para impulsar mi negocio ahora. Me interesa una web de alto impacto y alto ROI.",
-      pricingBase: "Hola Juan, me interesa el plan Web Base de $600.000 COP. ¿Cómo podemos empezar?",
-      pricingPro: "¡Hola Juan! Quiero la Web Pro de $950.000 COP ahora mismo para llevar mi negocio al siguiente nivel con backend y gestión de datos."
+      hero: "¡Hola Juan! Estoy listo para impulsar mi negocio ahora. Me interesa una web de alto impacto y alto ROI."
     }
   },
   hero: {
-    title: "Páginas web rápidas y estratégicas que convierten",
+    title: "Si tu página NO VENDE, estás perdiendo dinero AHORA MISMO!",
     subtitle: "Diseño y desarrollo de alta gama para negocios que no se conforman con lo ordinario. Tiempos de entrega adaptados a la complejidad de tu proyecto con enfoque total en ROI.",
     cta: "Impulsa mi negocio ahora",
     secondaryCta: "Ver proceso"
@@ -64,8 +62,9 @@ export const juanDevStudioContent = {
         "Tiempo según complejidad",
         "Soporte por 30 días"
       ],
-      recommended: false,
-      cta: "Comenzar Proyecto Base"
+      recommended: true,
+      cta: "Comenzar Proyecto Base",
+      whatsappMessage: "Hola Juan, me interesa el plan Web Base de $600.000 COP. ¿Cómo podemos empezar?"
     },
     {
       name: "Web Pro (Con Backend)",
@@ -78,14 +77,15 @@ export const juanDevStudioContent = {
         "Tiempo según complejidad",
         "Soporte VIP Prioritario"
       ],
-      recommended: true,
-      cta: "¡Quiero la Web Pro Ahora!"
+      recommended: false,
+      cta: "¡Quiero la Web Pro Ahora!",
+      whatsappMessage: "¡Hola Juan! Quiero la Web Pro de $950.000 COP ahora mismo para llevar mi negocio al siguiente nivel con backend y gestión de datos."
     }
   ],
   faq: [
     {
-      question: "¿Por qué el precio es mayor que una agencia promedio?",
-      answer: "No vendemos simples páginas web; entregamos activos digitales diseñados para generar ROI. La calidad del código, la estrategia de conversión y el diseño premium aseguran que tu inversión se recupere rápidamente."
+      question: "¿Mi página realmente me va a generar más ventas?",
+      answer: "Si está bien hecha, sí. Si es lenta, genérica o mal estructurada, te está haciendo perder dinero ahora mismo.Yo no hago páginas para “estar en internet”.Las hago para convertir visitas en clientes.Así de simple."
     },
     {
       question: "¿Cuánto tiempo tarda la entrega?",

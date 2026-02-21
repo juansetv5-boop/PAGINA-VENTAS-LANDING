@@ -10,6 +10,7 @@ import {
 } from "@/components/ui/accordion";
 import { Badge } from "@/components/ui/badge";
 import { Check, Rocket, Zap, ShieldCheck, Star, ArrowRight, Mail } from "lucide-react";
+import BookingSection from "@/components/BookingSection";
 
 export default function Home() {
   const getWppLink = (message: string) => {
@@ -24,8 +25,8 @@ export default function Home() {
           <span className="font-headline font-extrabold text-xl tracking-tighter">
             JUAN<span className="text-primary">DEV</span> STUDIO
           </span>
-          <Button asChild variant="outline" className="hidden md:flex border-primary/20 hover:border-primary">
-            <a href={getWppLink(content.contact.messages.navbar)} target="_blank" rel="noopener noreferrer">
+          <Button asChild variant="outline" className="flex border-primary/20 hover:border-primary text-xs md:text-sm px-3 md:px-4 h-9 md:h-10">
+            <a href="#agenda">
               Agendar Llamada
             </a>
           </Button>
@@ -48,13 +49,15 @@ export default function Home() {
             </p>
             <div className="flex flex-col md:flex-row items-center justify-center gap-4">
               <Button asChild size="lg" className="h-14 px-8 text-lg font-bold gold-glow group">
-                <a href={getWppLink(content.contact.messages.hero)} target="_blank" rel="noopener noreferrer">
+                <a href="#agenda">
                   {content.hero.cta}
                   <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
                 </a>
               </Button>
-              <Button size="lg" variant="ghost" className="h-14 px-8 text-lg">
-                {content.hero.secondaryCta}
+              <Button asChild size="lg" variant="ghost" className="h-14 px-8 text-lg transition-all duration-200 active:scale-95">
+                <a href="#proceso">
+                  {content.hero.secondaryCta}
+                </a>
               </Button>
             </div>
           </div>
@@ -82,7 +85,7 @@ export default function Home() {
         </section>
 
         {/* Services VIP Grid */}
-        <section className="py-24 bg-background">
+        <section id="proceso" className="py-24 bg-background">
           <div className="container mx-auto px-6">
             <div className="text-center mb-16">
               <h2 className="text-3xl md:text-5xl font-extrabold mb-6">El Proceso de Éxito</h2>
@@ -92,9 +95,9 @@ export default function Home() {
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {content.services.map((service, i) => (
-                <Card key={i} className="gold-border-gradient border-none overflow-hidden transition-all duration-300">
+                <Card key={i} className="gold-border-gradient gold-neon-glow border-none overflow-hidden transition-all duration-300">
                   <CardContent className="p-8">
-                    <div className="text-5xl font-black text-white/5 mb-4 select-none">
+                    <div className="text-5xl font-black gold-text-gradient mb-4 select-none">
                       {service.step}
                     </div>
                     <h3 className="text-xl font-bold mb-3">{service.title}</h3>
@@ -117,27 +120,27 @@ export default function Home() {
             </div>
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-5xl mx-auto">
               {content.pricing.map((plan, i) => {
-                const wppMsg = plan.recommended ? content.contact.messages.pricingPro : content.contact.messages.pricingBase;
+                const wppMsg = plan.whatsappMessage;
                 return (
-                  <Card key={i} className={`relative flex flex-col p-8 ${plan.recommended ? 'gold-border-gradient scale-105 z-10' : 'bg-background/40 border-white/10'}`}>
+                  <div key={i} className={`relative p-8 rounded-2xl border transition-all duration-300 flex flex-col h-full ${plan.recommended
+                      ? 'bg-white/[0.05] border-primary/50 gold-neon-glow animate-breathing-glow scale-105 z-10'
+                      : 'bg-white/[0.02] border-white/10 hover:border-white/20'
+                    }`}>
                     {plan.recommended && (
-                      <Badge className="absolute -top-3 left-1/2 -translate-x-1/2 bg-primary text-background font-bold px-4 py-1">
-                        MÁS POPULAR
-                      </Badge>
+                      <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-primary text-primary-foreground text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">
+                        Más Recomendado
+                      </div>
                     )}
                     <div className="mb-8">
-                      <h3 className="text-2xl font-bold mb-2">{plan.name}</h3>
-                      <p className="text-sm text-muted-foreground mb-6">{plan.description}</p>
-                      <div className="flex items-baseline gap-1">
-                        <span className="text-4xl font-black">{plan.price}</span>
-                        <span className="text-muted-foreground">/proyecto</span>
-                      </div>
+                      <h3 className="text-xl font-bold mb-2">{plan.name}</h3>
+                      <div className="text-4xl font-extrabold gold-text-gradient mb-4">{plan.price}</div>
+                      <p className="text-sm text-muted-foreground leading-relaxed">{plan.description}</p>
                     </div>
-                    <div className="flex-grow space-y-4 mb-8">
-                      {plan.features.map((feature, idx) => (
-                        <div key={idx} className="flex items-start gap-3">
+                    <div className="space-y-4 mb-8 flex-grow">
+                      {plan.features.map((feature, fIdx) => (
+                        <div key={fIdx} className="flex items-center gap-3 text-sm">
                           <Check className="h-5 w-5 text-primary shrink-0" />
-                          <span className="text-sm">{feature}</span>
+                          <span>{feature}</span>
                         </div>
                       ))}
                     </div>
@@ -146,12 +149,15 @@ export default function Home() {
                         {plan.cta}
                       </a>
                     </Button>
-                  </Card>
+                  </div>
                 );
               })}
             </div>
           </div>
         </section>
+
+        {/* Booking Section */}
+        <BookingSection />
 
         {/* FAQ Section */}
         <section className="py-24">
@@ -163,7 +169,7 @@ export default function Home() {
                   <AccordionTrigger className="hover:no-underline font-bold text-lg py-6">
                     {item.question}
                   </AccordionTrigger>
-                  <AccordionContent className="text-muted-foreground leading-relaxed pb-6">
+                  <AccordionContent className="text-primary font-medium leading-relaxed pb-6 text-base">
                     {item.answer}
                   </AccordionContent>
                 </AccordionItem>
