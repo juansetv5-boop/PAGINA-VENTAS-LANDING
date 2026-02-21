@@ -1,0 +1,17 @@
+
+{
+  "placeholderImages": [
+    {
+      "id": "hero-bg",
+      "description": "Premium dark abstract background",
+      "imageUrl": "https://picsum.photos/seed/juan-dev-1/1200/800",
+      "imageHint": "dark premium abstract"
+    },
+    {
+      "id": "project-1",
+      "description": "High performance web interface",
+      "imageUrl": "https://picsum.photos/seed/juan-dev-2/600/400",
+      "imageHint": "modern interface"
+    }
+  ]
+}
